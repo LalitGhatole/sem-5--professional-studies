@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Squares and Cubes Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding-top: 10px;
+
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #0d0b0b;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        th {
+            background-color: lightblue;
+        }
+
+
+        tr {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Squares and Cubes Table</h1>
+    <table border="1">
+        <tr>
+            <th>Number</th>
+            <th>Square (n<sup>2</sup>)</th>
+            <th>Cube (n<sup>3</sup>)</th>
+        </tr>
+        <script>
+
+            function calculateSquaresAndCubes() {
+                const table = document.querySelector('table');
+                for (let i = 0; i <= 10; i++) {
+                    const row = table.insertRow();
+                    const numCell = row.insertCell(0);
+                    const squareCell = row.insertCell(1);
+                    const cubeCell = row.insertCell(2);
+
+                    numCell.textContent = i;
+                    squareCell.textContent = i * i;
+                    cubeCell.textContent = i * i * i;
+                }
+            }
+
+            calculateSquaresAndCubes();
+        </script>
+    </table>
+</body>
+</html>

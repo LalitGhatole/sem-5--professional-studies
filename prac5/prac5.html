@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<title>
+    practical 5
+</title>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+            margin: 0;
+
+        }
+
+        #text {
+            font-size: 5pt;
+
+            color: blue;
+
+            transition: font-size 0.5s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text">Growing Text</div>
+
+    <script>
+        const textElement = document.getElementById('text');
+        let fontSize = 5;
+        let growing = true;
+
+        function updateTextSize() {
+            if (growing) {
+                fontSize += 1;
+                textElement.style.fontSize = fontSize + 'pt';
+                if (fontSize === 50) {
+                    growing = false;
+                    textElement.style.color = 'red';
+                    textElement.textContent = 'Shrinking Text';
+                }
+            } else {
+                fontSize -= 1;
+                textElement.style.fontSize = fontSize + 'pt';
+                if (fontSize === 5) {
+                    growing = true;
+                    textElement.style.color = 'blue';
+                    textElement.textContent = 'Growing Text';
+                }
+            }
+        }
+
+        setInterval(updateTextSize, 100);
+    </script>
+</body>
+
+</html>
